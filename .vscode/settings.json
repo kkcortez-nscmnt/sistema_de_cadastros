@@ -1,0 +1,29 @@
+{
+    "djangointellisense.projectRoot": "E:\\Documentos\\alm_cloud_dash_system",
+    "djangointellisense.settingsModule": "django_project.settings",
+    "djangointellisense.debugMessages": true,
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.black-formatter",
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+      }
+    },
+    "isort.args": [
+      "--profile",
+      "black"
+    ],
+    "auto-close-tag.SublimeText3Mode": true,
+    "auto-close-tag.insertSpaceBeforeSelfClosingTag": false,
+    "liveServer.settings.port": 5502,
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/Thumbs.db": true,
+      "**/__pycache__": true,
+      "**/migrations": true
+    }
+  }
