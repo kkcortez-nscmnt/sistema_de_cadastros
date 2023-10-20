@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # nativo
+    "cadastro_produtos.apps.CadastroProdutosConfig",
+    # terceiros
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
