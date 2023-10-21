@@ -48,7 +48,7 @@ class Produto(models.Model):
     descricao = models.TextField()
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     fornecedores = models.ManyToManyField(
-        "Fornecedor", related_name="produtos", through="PrecoFornecedor"
+        Fornecedor, related_name="produtos", through="PrecoFornecedor"
     )
 
     class Meta:
