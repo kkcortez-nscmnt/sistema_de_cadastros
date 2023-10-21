@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "cadastro_produtos.apps.CadastroProdutosConfig",
     # terceiros
     "rest_framework",
+    "drf_yasg",
 ]
 
 MIDDLEWARE = [
