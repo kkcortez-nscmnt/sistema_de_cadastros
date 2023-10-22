@@ -1,5 +1,5 @@
-from rest_framework import status, viewsets
-from rest_framework.response import Response
+from django.shortcuts import render
+from rest_framework import viewsets
 
 from .models import Categoria, Fornecedor
 from .serializers import CategoriaSerializer, FornecedorSerializer
@@ -14,3 +14,7 @@ class CategoriaViewSet(viewsets.ModelViewSet):
 class FornecedorViewSet(viewsets.ModelViewSet):
     queryset = Fornecedor.objects.all()
     serializer_class = FornecedorSerializer
+
+
+def home(request):
+    return render(request, "cadastro_produtos/home.html")
