@@ -20,7 +20,6 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    path("", include("cadastro_produtos.urls")),
     path("admin/", admin.site.urls),
     path("api/v1/", include(router.urls)),
 ]

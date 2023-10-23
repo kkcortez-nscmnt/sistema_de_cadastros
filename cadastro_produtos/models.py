@@ -24,9 +24,7 @@ class Fornecedor(models.Model):
 
     nome_fantasia = models.CharField(max_length=200)
     razao_social = models.CharField(max_length=200)
-    endereco = models.CharField(max_length=200)
     cnpj = models.CharField(max_length=14, unique=True)
-    telefones = models.CharField(max_length=200)
 
     class Meta:
         """Meta definition for Fornecedor."""
@@ -39,13 +37,30 @@ class Fornecedor(models.Model):
         return f"{self.nome_fantasia}"
 
 
+class Telefone(models.Model):
+    telefone = models.CharField(max_length=20)
+    fonecedor = models.ForeignKey(
+        Fornecedor, related_name="telefones", on_delete=models.CASCADE
+    )
+
+
+class Endereco(models.Model):
+    rua = models.CharField(max_length=200)
+    bairro = models.CharField(max_length=200)
+    numero = models.IntegerField()
+    cidade = models.CharField(max_length=200)
+    fornececedor = models.ForeignKey(
+        Fornecedor, related_name="enderecos", on_delete=models.CASCADE
+    )
+
+
 class Produto(models.Model):
     """Model definition for Produto."""
 
-    nome = models.CharField(max_length=200)
+    nome = models.CharField(max_length=200, unique=True)
     data_cadastro = models.DateTimeField(auto_now_add=True)
     data_atualizacao = models.DateTimeField(auto_now=True)
-    descricao = models.TextField()
+    descricao = models.TextField(null=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     fornecedores = models.ManyToManyField(
         Fornecedor, related_name="produtos", through="PrecoFornecedor"
