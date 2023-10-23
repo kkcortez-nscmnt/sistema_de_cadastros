@@ -1,6 +1,6 @@
 <h1 align="center"> TestDev - Django REST FrameWork </h1>
 
-<p align ="center"> Sistema de Cadastro Proddutos-Fornecedores<p>
+<p align ="center"> Sistema de Cadastro Produtos-Fornecedores<p>
 
 Objetivos implementados:
 
